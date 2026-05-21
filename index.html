@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RACE - REVA Academy for Corporate Excellence</title>
+    <meta name="description" content="Develop visionary enterprise leaders for corporates through progressive and integrated learning capabilities.">
+    <meta name="keywords" content="Corporate Training, Executive Development, RACE Academy, Leadership Programs">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f9fafb;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: white;
+            margin: 2rem 1rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+
+            .stat-item {
+                align-items: flex-start;
+            }
+        }
+
+        .stat-divider {
+            display: none;
+            border-left: 1px solid #d1d5db;
+            height: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .stat-divider {
+                display: block;
+            }
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f97316;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 3.5rem;
+            }
+        }
+
+        .stat-label {
+            color: #4b5563;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        @media (min-width: 768px) {
+            .stat-label {
+                text-align: left;
+            }
+        }
+
+        /* Main Content Section */
+        .main-content {
+            padding: 3rem 1rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        @media (min-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Left Column */
+        .left-column h2 {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .left-column p {
+            color: #4b5563;
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.75;
+        }
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .vision-mission-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .card {
+            border: 1px solid #d1d5db;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+        }
+
+        .card-content {
+            color: #4b5563;
+            line-height: 1.75;
+        }
+
+        /* Right Column */
+        .features-box {
+            border: 1px solid #d1d5db;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .features-box h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            display: flex;
+            gap: 0.75rem;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .features-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .bullet {
+            color: #f97316;
+            font-weight: bold;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            flex: 1;
+        }
+
+        /* Building Image */
+        .building-image {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .building-image {
+                height: 500px;
+            }
+        }
+
+        .building-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive */
+        @media (max-width: 767px) {
+            .stat-divider {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Years in Tech Education</div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Mid and senior executives trained</div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Senior Leaders as Mentors</div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Partner Companies</div>
+            </div>
+
+            <div class="stat-divider"></div>
+
+            <div class="stat-item">
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">Career Transitions</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <h2>About RACE</h2>
+
+                    <p>
+                        REVA Academy for Corporate Excellence (RACE) aims to develop visionary enterprise leaders for corporates through progressive and integrated learning capabilities.
+                    </p>
+
+                    <p>
+                        RACE offers best in class, specialized, techno-functional and interdisciplinary programs designed to suit the needs of working professionals. The pedagogy of each program incorporates social and experiential learning to build transformative proficiencies in every participant.
+                    </p>
+
+                    <p>
+                        Each of the programs is planned, designed and delivered by renowned corporate leaders and trainers and combines latest tools, technologies and skill sets which are in sync with the futuristic demands of the industry.
+                    </p>
+
+                    <!-- Vision and Mission Cards -->
+                    <div class="vision-mission-grid">
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="card-icon">👁️</span>
+                                <h3 class="card-title">Vision</h3>
+                            </div>
+                            <p class="card-content">
+                                Become the Most Preferred Partner for Training for fast rising executives and organizations
+                            </p>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="card-icon">🎯</span>
+                                <h3 class="card-title">Mission</h3>
+                            </div>
+                            <p class="card-content">
+                                Developing Visionary Enterprise Leaders for Corporates through Progressive and Integrated Learning Capabilities
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Key Features Section -->
+                    <div class="features-box">
+                        <h3>Key Features</h3>
+                        <ul class="features-list">
+                            <li>
+                                <span class="bullet">•</span>
+                                <span class="feature-text">Blended mode with lab-based training and 24/7 online support</span>
+                            </li>
+                            <li>
+                                <span class="bullet">•</span>
+                                <span class="feature-text">Learning Management System with industry certifications</span>
+                            </li>
+                            <li>
+                                <span class="bullet">•</span>
+                                <span class="feature-text">Certifications from REVA University and industry partners</span>
+                            </li>
+                            <li>
+                                <span class="bullet">•</span>
+                                <span class="feature-text">Lateral placement support and mentoring by senior industry leaders</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Building Image -->
+                    <div class="building-image">
+                        <img src="https://images.unsplash.com/photo-1486718448742-163732cd3d3e?w=600&q=80" alt="RACE Building - Modern Architecture">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
